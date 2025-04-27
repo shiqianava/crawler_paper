@@ -1,0 +1,5 @@
+{
+    "python.defaultInterpreterPath": "python",
+    "terminal.integrated.enablePersistentSessions": false,
+    // "python.analysis.extraPaths": ["./crawler_project"]
+}
