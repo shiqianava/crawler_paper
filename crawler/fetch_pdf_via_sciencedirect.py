@@ -2,6 +2,7 @@
 
 from .units import send_http_get_request
 from .config import SCIENCE_DIRECT_URL
+from .config import SCIENCE_DIRECT_X_ELS_APIKey
 
 
 # ---------------------------
@@ -10,7 +11,7 @@ from .config import SCIENCE_DIRECT_URL
 def fetch_pdf_via_sciencedirect(doi):
     headers = {
         "Accept": "application/json",
-        "X-ELS-APIKey": "12a8eb40c97addbf7e1aa5ac939c7bdb",
+        "X-ELS-APIKey": SCIENCE_DIRECT_X_ELS_APIKey,
     }
     api = SCIENCE_DIRECT_URL.format(doi=doi)
     data = send_http_get_request(api, headers, response_type="json")

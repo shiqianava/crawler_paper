@@ -33,9 +33,9 @@ def download_pdf(doi):
     
     # 定义返回 URL 的函数列表和返回 PDF 内容的函数列表
     url_fetchers = [
-        fetch_pdf_url_via_unpaywall, 
-        fetch_pdf_url_via_europepmc, 
-        fetch_pdf_url_via_openaccess
+        # fetch_pdf_url_via_unpaywall, 
+        # fetch_pdf_url_via_europepmc,
+        # fetch_pdf_url_via_openaccess
     ]
     pdf_fetchers = [
         fetch_pdf_via_sciencedirect
