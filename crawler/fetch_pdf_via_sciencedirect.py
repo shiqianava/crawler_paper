@@ -20,6 +20,7 @@ def fetch_pdf_via_sciencedirect(doi):
         if openaccessArticle:
             # 有开放下载权限，直接下载
             headers["Accept"] = "application/pdf"
+            print(api)
             pdf = send_http_get_request(api, headers, response_type="pdf")
             return pdf
         else:

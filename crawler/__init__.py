@@ -7,6 +7,7 @@ from .fetch_pdf_url_via_europepmc import fetch_pdf_url_via_europepmc
 from .fetch_pdf_url_via_openaccess import fetch_pdf_url_via_openaccess
 from .fetch_pdf_url_via_unpaywall import fetch_pdf_url_via_unpaywall
 from .fetch_pdf_via_sciencedirect import fetch_pdf_via_sciencedirect
+from .fetch_pdf_via_wiley import fetch_pdf_via_wiley
 from .units import send_http_get_request
 
 # 确保下载目录存在（但不删除旧文件）
@@ -30,12 +31,12 @@ def download_pdf(doi):
     if os.path.exists(out):
         print(f"[SKIP] 已存在文件：{out}")
         return True
-    
+
     # 定义返回 URL 的函数列表和返回 PDF 内容的函数列表
     url_fetchers = [
-        # fetch_pdf_url_via_unpaywall, 
-        # fetch_pdf_url_via_europepmc,
-        # fetch_pdf_url_via_openaccess
+        fetch_pdf_url_via_unpaywall, 
+        fetch_pdf_url_via_europepmc,
+        fetch_pdf_url_via_openaccess
     ]
     pdf_fetchers = [
         fetch_pdf_via_sciencedirect

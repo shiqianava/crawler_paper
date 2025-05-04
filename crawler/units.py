@@ -3,19 +3,15 @@
 import requests
 from .request_headers import request_headers
 
-import requests
-
-
-def request_headers():
-    # 这里可以根据实际情况定义请求头
-    return {'Accept': 'application/json'}
-
-
-def send_http_get_request(url, headers=request_headers(), timeout=15, response_type='json', max_retries=2, stream=False):
+def send_http_get_request(url, headers=request_headers(), timeout=20, response_type='json', max_retries=2, stream=False):
     retries = 0
     while retries < max_retries:
         try:
+            # headers = request_headers(response_type='pdf')
+            # print(headers)
             r = requests.get(url, headers=headers, timeout=timeout, stream=stream)
+            print("s输出请求头")
+            print(headers)
             r.raise_for_status()
             if response_type == 'json':
                 if stream:
