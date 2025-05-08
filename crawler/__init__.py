@@ -7,7 +7,7 @@ from .fetch_pdf_url_via_europepmc import fetch_pdf_url_via_europepmc
 from .fetch_pdf_url_via_openaccess import fetch_pdf_url_via_openaccess
 from .fetch_pdf_url_via_unpaywall import fetch_pdf_url_via_unpaywall
 from .fetch_pdf_via_sciencedirect import fetch_pdf_via_sciencedirect
-from .fetch_pdf_via_wiley import fetch_pdf_via_wiley
+from .fetch_pdf_url_via_crossref import fetch_pdf_url_via_crossref
 from .units import send_http_get_request
 
 # 确保下载目录存在（但不删除旧文件）
@@ -36,7 +36,8 @@ def download_pdf(doi):
     url_fetchers = [
         fetch_pdf_url_via_unpaywall, 
         fetch_pdf_url_via_europepmc,
-        fetch_pdf_url_via_openaccess
+        fetch_pdf_url_via_openaccess,
+        fetch_pdf_url_via_crossref
     ]
     pdf_fetchers = [
         fetch_pdf_via_sciencedirect

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+import requests
 from .units import send_http_get_request
 
 # 该网站的所有接口都不能获取论文的 pdf 链接，已经弃用

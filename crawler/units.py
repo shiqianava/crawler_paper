@@ -7,11 +7,7 @@ def send_http_get_request(url, headers=request_headers(), timeout=20, response_t
     retries = 0
     while retries < max_retries:
         try:
-            # headers = request_headers(response_type='pdf')
-            # print(headers)
             r = requests.get(url, headers=headers, timeout=timeout, stream=stream)
-            print("s输出请求头")
-            print(headers)
             r.raise_for_status()
             if response_type == 'json':
                 if stream:
